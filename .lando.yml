@@ -1,0 +1,15 @@
+name: drupal-portfolio
+recipe: drupal10
+config:
+  webroot: web
+  php: "8.3"
+  database: mariadb:10.11
+services:
+  database:
+    type: mariadb:10.11
+  appserver:
+    xdebug: true
+tooling:
+  drush:
+    service: appserver
+    cmd: drush

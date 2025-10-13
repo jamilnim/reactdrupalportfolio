@@ -1,0 +1,54 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100vw;
+}
+.containerBorder {
+  width: 48%;
+  height: 93%;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100vw;
+  height: 30rem;
+  background-color: black;
+  display: flex;
+  margin: 0;
+  padding: 2rem;
+  border: 0;
+}
+
+.sideButton {
+  width: 45%;
+  height: 90%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutmeContent {
+  width: 40%;
+  margin: 2rem;
+  color: white;
+  font-size: .8em;
+  text-align: justify;
+}
+
+.aboutmeHeading {
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+padding-top: 6rem;
+  border: 0;
+  font-size: 3em;
+  width: 100vw;
+  padding-top: 6re;
+  
+}
