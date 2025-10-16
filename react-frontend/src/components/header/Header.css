@@ -1,19 +1,21 @@
+/* ------------------ MOBILE FIRST ------------------ */
 html {
     scroll-behavior: smooth;
   }
+  
   .main-header {
     display: flex;
+    flex-direction: column; /* stack logo + nav on mobile */
     align-items: center;
-    position: relative;
-    z-index: 10;
-  
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 12rem;
     background-image: url(../../assets/background/heading.jpg);
     background-size: cover;
     background-position: center;
-    overflow: hidden;
-    height: 10rem;
-    position: fixed;
-    width: 100vw;
+    z-index: 10;
+    padding: 1rem 0;
   }
   
   .main-header::before {
@@ -22,33 +24,29 @@ html {
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 60%
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.8) 60%
     );
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     z-index: -1;
-    height: 10rem;
+    height: 11rem;
   }
+
+
   
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
   .mainlogo {
-    width: 4rem;
-    left: 9rem;
+    width: 3rem;
     object-fit: cover;
     border-radius: 50%;
     animation: spin 12s linear infinite;
-    margin-left: 3rem;
+    margin-bottom: 0.5rem;
   }
-
-   .mainlogotext {
-    margin-left: 3rem;
+  
+  .mainlogotext {
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    color: white;
+    text-align: center;
   }
   
   .logocontainer {
@@ -61,28 +59,104 @@ html {
   }
   
   .nav-bar {
-    flex-grow: 1;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 4rem;
+    justify-content: center; /* center on mobile */
+    margin: 0;
   }
   
   .nav-links {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* small gap on mobile */
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
   }
   
   .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, font-size 0.3s ease;
   }
   
   .nav-links a:hover {
-    color: #ffd700; /* Light gold */
+    color: #ffd700;
+    font-size: 1rem;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* ------------------ TABLET ------------------ */
+  @media (min-width: 600px) {
+    .main-header {
+      flex-direction: row; /* logo + nav side by side */
+      justify-content: space-between; /* logo left, nav right */
+      align-items: center;
+      padding: 1rem 2rem;
+      height: 6rem;
+    }
+  
+    .mainlogo {
+      width: 3.5rem;
+      margin: 0;
+    }
+  
+    .mainlogotext {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+  
+    .nav-bar {
+      justify-content: flex-end; /* nav pushed to right */
+    }
+  
+    .nav-links {
+      gap: 1rem;
+    }
+  
+    .nav-links a {
+      font-size: 1rem;
+    }
+  
+    .nav-links a:hover {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* ------------------ DESKTOP ------------------ */
+  @media (min-width: 1024px) {
+    .mainlogo {
+      width: 4rem;
+    }
+  
+    .mainlogotext {
+      font-size: .9rem;
+    }
+  
+    .nav-bar {
+      justify-content: flex-end; /* keep nav on right */
+      margin-right: 4rem; /* optional spacing from right edge */
+    }
+  
+    .nav-links {
+      gap: 2rem; /* more space between links on desktop */
+    }
+  
+    .nav-links a {
+      font-size: 1.1rem;
+    }
+  
+    .nav-links a:hover {
+      font-size: 1.5rem;
+    }
   }
   

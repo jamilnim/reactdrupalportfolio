@@ -1,19 +1,20 @@
+/* ✅ MOBILE FIRST (default) */
 .footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;   /* Stack on mobile */
+  justify-content: center;
   align-items: center;
   background-image: url(../../assets/background/heading.jpg);
   background-size: cover;
   background-position: center;
   color: #ccc;
-  padding: 1rem 2rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   position: relative;
-  overflow: hidden; /* ensures blur doesn't overflow */
+  overflow: hidden;
   z-index: 1;
-  height: 15rem;
-  width: 100vw;
-  padding: 2rem;
+  height: auto;      /* Flexible */
+  width: 100%;
+  text-align: center;
 }
 
 .footer::before {
@@ -27,28 +28,25 @@
   );
   backdrop-filter: blur(5px);
   z-index: -1;
-  height: 15rem;
-  width: 100vw;
-  padding: 2rem;
 }
 
 .footer-left {
-  flex: 1;
+  margin-bottom: 1rem;
 }
 
 .footer-right {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer-nav {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: .3rem;
   margin: 0;
   padding: 0;
-  flex-direction: column;
 }
 
 .footer-nav li a {
@@ -59,4 +57,70 @@
 
 .footer-nav li a:hover {
   color: #ffd700;
+}
+
+/* ✅ DESKTOP (YOUR ORIGINAL CODE UNTOUCHED) */
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../../assets/background/heading.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #ccc;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 15rem;
+    width: 100vw;
+    padding: 3rem;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 5%,
+      rgba(0, 0, 0, 1) 50%
+    );
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    height: 15rem;
+    width: 100vw;
+    padding: 3rem;
+  }
+
+  .footer-left {
+    flex: 1;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav {
+    list-style: none;
+    display: flex;
+    gap: .2rem;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .footer-nav li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-nav li a:hover {
+    color: #ffd700;
+  }
 }

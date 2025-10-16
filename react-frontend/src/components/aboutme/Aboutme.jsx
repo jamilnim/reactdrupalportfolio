@@ -6,7 +6,8 @@ import Button from "./Button";
 function JobTimeline() {
   return (
     <>
-      <div className="aboutmeHeading"> About me</div>
+    <section id="aboutme">
+      <div className="aboutmeHeading" id="aboutme"> About me</div>
 
       <div className="container">
         <div className="sideButton">
@@ -46,6 +47,7 @@ function JobTimeline() {
           </p>
         </div>
       </div>
+      </section>
     </>
   );
 }

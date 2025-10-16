@@ -14,7 +14,7 @@
     border-radius: 50%;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: 0.25s;
-    color: white;
+    color: rgb(12, 10, 10);
   }
   
   .icon:hover {

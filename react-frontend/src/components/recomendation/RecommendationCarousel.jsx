@@ -50,6 +50,7 @@ function RecommendationCarousel() {
 
   return (
     <>
+    <section id="recomendation">
       <div className="recomentationContainer">
         <h1 className="recomendationHeading">Recomendation</h1>
         <div className="carousel-container">
@@ -81,6 +82,7 @@ function RecommendationCarousel() {
           </button>
         </div>
       </div>
+      </section>
     </>
   );
 }

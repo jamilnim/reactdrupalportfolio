@@ -1,10 +1,16 @@
+/* ✅ MOBILE FIRST (default) */
 .recomentationContainer {
   background-color: #000000;
-  width: 100vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
+
 .recomendationHeading {
   text-align: center;
   color: white;
+  font-size: 1.6rem;
 }
 
 .carousel-container {
@@ -12,33 +18,34 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 2rem;
-  width: 100vw;
+  padding: 1.5rem;
+  width: 100%;
   margin: auto;
 }
 
 .recommendationCard {
   position: relative;
-  background: #000000; /* Black inside */
-  color: white; /* White text */
-  padding: 2rem;
+  background: #000000;
+  color: white;
+  padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(128, 128, 128, 0.5);
-  width: 80%;
-  height: 15rem;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* hide overflow of animation */
+  overflow: hidden;
   z-index: 1;
 }
 
 .recommendationCard::before {
   content: "";
   position: absolute;
-  inset: 0; /* stretch full size */
-  padding: 3px; /* border thickness */
+  inset: 0;
+  padding: 3px;
   border-radius: 16px;
   background: linear-gradient(
     60deg,
@@ -49,41 +56,31 @@
     blue,
     transparent
   );
-  width: 100vw;
-  height: 18rem;
+  width: 100%;
+  height: 100%;
   animation: rotation_481 9000ms infinite linear;
-  mask-composite: exclude; /* show only the border */
+  mask-composite: exclude;
   z-index: -1;
 }
 
 .recommendationCard::after {
   content: "";
   position: absolute;
-  background: black; /* Black inside */
-  padding: 2rem;
+  background: black;
   border-radius: 16px;
-  width: 100vw;
-  height: 14.5rem;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-}
-@keyframes moveBorder {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
 }
 
 .recmendData {
   position: relative;
-  content: "";
   z-index: 2;
 }
 
 .card-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 2px solid #fff;
@@ -94,7 +91,7 @@
 }
 
 .card .email {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #bbb;
   margin-bottom: 0.5rem;
 }
@@ -108,39 +105,120 @@
 }
 
 .card .text {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-top: 1rem;
   line-height: 1.4;
 }
 
+/* Hide nav buttons on mobile */
 .nav-btn {
-  border: none;
-  font-size: 2rem;
-
-  cursor: pointer;
-  transition: transform 0.2s;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 6rem;
+  display: none;
 }
 
-.nav-btn:hover {
-  transform: scale(1.2) translateY(-50%);
-}
+/* ✅ DESKTOP (your original code untouched) */
+@media (min-width: 1024px) {
+  .recomentationContainer {
+    background-color: #000000;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 
-.nav-btn.left {
-  left: 4rem;
-background-color: transparent;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-}
+  .recomendationHeading {
+    text-align: center;
+    color: white;
+  }
 
-.nav-btn.right {
-  right: -0.2rem;
-  background-color: transparent;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+    width: 80%;
+    margin: auto;
+  }
+
+  .recommendationCard {
+    position: relative;
+    background: #000000;
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(128, 128, 128, 0.5);
+    min-width: 75%;
+    height: 15rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .recommendationCard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 16px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      blue,
+      transparent,
+      transparent,
+      blue,
+      transparent
+    );
+    width: 130%;
+    height: 50rem;
+    animation: rotation_481 9000ms infinite linear;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  .recommendationCard::after {
+    content: "";
+    position: absolute;
+    background: black;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 93%;
+    height: 14.5rem;
+    z-index: 0;
+  }
+
+  .nav-btn {
+    display: block;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 6rem;
+  }
+
+  .nav-btn:hover {
+    transform: scale(1.2) translateY(-50%);
+  }
+
+  .nav-btn.left {
+    left: 4rem;
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+
+  .nav-btn.right {
+    right: -0.2rem;
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
 }

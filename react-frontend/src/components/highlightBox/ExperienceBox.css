@@ -1,6 +1,7 @@
+/* ✅ Base (Mobile first) */
 .exp-section {
   position: relative;
-  padding: 2rem 1rem;
+
   text-align: center;
   background-image: url(../../assets/background/heading.jpg);
   background-size: cover;
@@ -9,10 +10,9 @@
   overflow: hidden;
   z-index: 1;
   width: 100vw;
-  padding: 2rem;
 }
 
-/* Foggy white overlay */
+/* Foggy overlay */
 .exp-section::before {
   content: "";
   position: absolute;
@@ -23,55 +23,109 @@
   background: linear-gradient(
     to bottom,
     rgb(0, 0, 0) 0%,
-    /* Dark at top */ rgba(255, 255, 255, 0.3) 80%,
-    /* Light/foggy in middle */ rgb(0, 0, 0.03) 100% /* Dark at bottom */
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(0, 0, 0, 0.03) 100%
   );
   backdrop-filter: blur(2px);
   z-index: 0;
 }
 
-/* Raise content above overlay */
 .exp-title,
 .exp-grid {
   position: relative;
   z-index: 2;
 }
 
+/* ✅ Mobile heading */
 .exp-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #faf8f8;
 }
 
+/* ✅ Mobile grid layout (stacked) */
 .exp-grid {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   background-color: #f1f2f5;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 7px;
 }
 
+/* ✅ Mobile box */
 .exp-box {
-  flex: 1 1 100px;
-  min-width: 100px;
+  max-width: 70%;
   padding: 1rem;
-  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .exp-box:last-child {
-  border-right: none;
+  border-bottom: none;
 }
 
 .exp-value {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #111;
+  width: 80%;
 }
 
 .exp-label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
   margin-top: 0.4rem;
+  width: 80%;
+}
+
+/* ✅ Tablet (≥768px) */
+@media (min-width: 768px) {
+  .exp-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-grid {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+  }
+
+  .exp-box {
+    width: auto;
+    flex: 1 1 50px;
+    border-bottom: none;
+    border-right: 1px solid #ddd;
+  }
+
+  .exp-box:last-child {
+    border-right: none;
+  }
+
+  .exp-value {
+    font-size: 1.5rem;
+  }
+
+  .exp-label {
+    font-size: 0.95rem;
+  }
+}
+
+/* ✅ Desktop (≥1024px) */
+@media (min-width: 1024px) {
+  .exp-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .exp-value {
+    font-size: 1.8rem;
+  }
+
+  .exp-section{
+    width: 100vw;
+    padding: 3rem;
+  }
 }
