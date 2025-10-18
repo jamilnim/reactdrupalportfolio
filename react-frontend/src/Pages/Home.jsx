@@ -7,6 +7,7 @@ import Aboutme from "../components/aboutme/Aboutme";
 import Strength from "../components/strength/Strength";
 import RecommendationCarousel from "../components/recomendation/RecommendationCarousel";
 import { useLocation } from "react-router-dom";
+import Card from "../components/sevicepromo/Card";
 
 
 
@@ -25,11 +26,14 @@ function Home() {
       <Hotsports />
       <ExperienceBox />
       <Aboutme />
+      <Card/>
       <Strength />
       <section id="projects">
+     
       <ProjectLists />
       </section>
       <RecommendationCarousel />
+     
     </div>
   );
 }

@@ -1,0 +1,7 @@
+name: My Theme
+type: theme
+base theme: stable9 # or classy if you prefer
+description: "Custom theme with React"
+core_version_requirement: ^11 || ^10
+libraries:
+  - mytheme/react_app

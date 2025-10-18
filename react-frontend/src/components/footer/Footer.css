@@ -1,7 +1,7 @@
-/* ✅ MOBILE FIRST (default) */
+/* MOBILE FIRST */
 .footer {
   display: flex;
-  flex-direction: column;   /* Stack on mobile */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(../../assets/background/heading.jpg);
@@ -12,11 +12,12 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  height: auto;      /* Flexible */
-  width: 100%;
+  max-width: 100vw;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
+/* ✅ BLACK FADE OVERLAY PRESERVED */
 .footer::before {
   content: "";
   position: absolute;
@@ -31,20 +32,41 @@
 }
 
 .footer-left {
-  margin-bottom: 1rem;
-}
-
-.footer-right {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-links img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .footer-nav {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: .3rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -59,68 +81,38 @@
   color: #ffd700;
 }
 
-/* ✅ DESKTOP (YOUR ORIGINAL CODE UNTOUCHED) */
+/* DESKTOP */
 @media (min-width: 1024px) {
   .footer {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-image: url(../../assets/background/heading.jpg);
-    background-size: cover;
-    background-position: center;
-    color: #ccc;
-    padding: 1rem 2rem;
-    font-size: 0.95rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    height: 15rem;
     width: 100vw;
     padding: 3rem;
-  }
-
-  .footer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0) 5%,
-      rgba(0, 0, 0, 1) 50%
-    );
-    backdrop-filter: blur(5px);
-    z-index: -1;
     height: 15rem;
-    width: 100vw;
-    padding: 3rem;
+    text-align: left;
   }
 
   .footer-left {
-    flex: 1;
+    align-items: flex-start;
+    margin-left: 2rem;
   }
 
+  .social-links {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* ✅ RIGHT SIDE EXACT POSITION: 1.5rem from screen edge */
   .footer-right {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin-right: 3rem;
+    
   }
 
   .footer-nav {
-    list-style: none;
-    display: flex;
-    gap: .2rem;
-    margin: 0;
-    padding: 0;
     flex-direction: column;
-  }
-
-  .footer-nav li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .footer-nav li a:hover {
-    color: #ffd700;
+    gap: 2rem;
+    align-items: flex-end;
+    text-align: right;
   }
 }

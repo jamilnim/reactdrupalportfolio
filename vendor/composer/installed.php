@@ -3,11 +3,11 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f31ddd93efc14de8a886f3791425253c2752e110',
+        'reference' => '104b336186ece465e7ba762623b259b07e9b47af',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         'asm89/stack-cors' => array(
@@ -346,7 +346,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f31ddd93efc14de8a886f3791425253c2752e110',
+            'reference' => '104b336186ece465e7ba762623b259b07e9b47af',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
